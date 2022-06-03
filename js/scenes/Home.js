@@ -21,15 +21,15 @@ class Home extends Phaser.Scene {
 		const waterLayer = map.createLayer('ground/water', tileset, 0, 0);
 		const groundLayer = map.createLayer('ground/ground', tileset, 0, 0);
 		const ground2Layer = map.createLayer('ground/ground 2', tileset, 0, 0);
-		const groundShadowLayer = map.createLayer('ground/Shadow 1', townTiles, 0, 0);
+		//const groundShadowLayer = map.createLayer('ground/Shadow 1', townTiles, 0, 0);
 		const houseLayer = map.createLayer('houses', townTiles, 0, 0);
 		const wallLayer = map.createLayer('walls', tileset, 0, 0);
 		const miscLayer = map.createLayer('miselanious', townTiles, 0, 0);
-		const shad2Layer = map.createLayer('Shadow 2', townTiles, 0, 0);
+		//const shad2Layer = map.createLayer('Shadow 2', townTiles, 0, 0);
 		const roofLayer = map.createLayer('roof', tileset, 0, 0);
 		const houseRoofLayer = map.createLayer('house roof', townTiles, 0, 0);
 		const miscRoofLayer = map.createLayer('roof miselanious', townTiles, 0, 0);
-		const shad3Layer = map.createLayer('Shadow 3', townTiles, 0, 0);
+		//const shad3Layer = map.createLayer('Shadow 3', townTiles, 0, 0);
 		
 		this.keys = this.input.keyboard.createCursorKeys();
       
