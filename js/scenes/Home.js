@@ -32,30 +32,7 @@ class Home extends Phaser.Scene {
 			move: new MoveState(),
 		}, [this, this.hero]);
 		  
-		this.anims.create({
-			key: 'walk-down',
-			frameRate: 8,
-			repeat: -1,
-			frames: this.anims.generateFrameNumbers('hero', {start: 0, end: 3}),
-		});
-		this.anims.create({
-			key: 'walk-right',
-			frameRate: 8,
-			repeat: -1,
-			frames: this.anims.generateFrameNumbers('hero', {start: 4, end: 7}),
-		});
-		this.anims.create({
-			key: 'walk-up',
-			frameRate: 8,
-			repeat: -1,
-			frames: this.anims.generateFrameNumbers('hero', {start: 8, end: 11}),
-		});
-		this.anims.create({
-			key: 'walk-left',
-			frameRate: 8,
-			repeat: -1,
-			frames: this.anims.generateFrameNumbers('hero', {start: 12, end: 15}),
-		});
+		setupAnim(this);
     }
     
     update() {
@@ -63,45 +40,29 @@ class Home extends Phaser.Scene {
     }
 }
 
-class IdleState extends State {
-  enter(scene, hero) {
-    hero.anims.play(`walk-${hero.direction}`, true);
-    hero.anims.stop();
-  }
-  
-  execute(scene, hero) {
-    const {left, right, up, down} = scene.keys;
-    
-    // Transition to move if pressing a movement key
-    if (left.isDown || right.isDown || up.isDown || down.isDown) {
-      this.stateMachine.transition('move');
-      return;
-    }
-  }
-}
-
-class MoveState extends State {
-  execute(scene, hero) {
-    const {left, right, up, down} = scene.keys;
-    
-    // Transition to idle if not pressing movement keys
-    if (!(left.isDown || right.isDown || up.isDown || down.isDown)) {
-      this.stateMachine.transition('idle');
-      return;
-    }
-    
-    hero.setVelocity(0);
-    if (up.isDown) {
-      hero.direction = 'up';
-    } else if (down.isDown) { 
-      hero.direction = 'down';
-    }
-    if (left.isDown) {
-      hero.direction = 'left';
-    } else if (right.isDown) {
-      hero.direction = 'right';
-    }
-    
-    hero.anims.play(`walk-${hero.direction}`, true);
-  }
+function setupAnim(scene) {
+	scene.anims.create({
+		key: 'walk-down',
+		frameRate: 8,
+		repeat: -1,
+		frames: scene.anims.generateFrameNumbers('hero', {start: 0, end: 3}),
+	});
+	scene.anims.create({
+		key: 'walk-right',
+		frameRate: 8,
+		repeat: -1,
+		frames: scene.anims.generateFrameNumbers('hero', {start: 4, end: 7}),
+	});
+	scene.anims.create({
+		key: 'walk-up',
+		frameRate: 8,
+		repeat: -1,
+		frames: scene.anims.generateFrameNumbers('hero', {start: 8, end: 11}),
+	});
+	scene.anims.create({
+		key: 'walk-left',
+		frameRate: 8,
+		repeat: -1,
+		frames: scene.anims.generateFrameNumbers('hero', {start: 12, end: 15}),
+	});
 }
