@@ -5,6 +5,7 @@ class Home extends Phaser.Scene {
 	
 	preload(){
 		this.load.image('tiles', 'assets/Art/Template_work/map_1_assets.png');
+		this.load.image('tilesTown', 'assets/Art/Template_work/town_map_1.png');
 		this.load.tilemapTiledJSON('level', 'assets/Art/Template_work/map_1.json');
 		
 		this.load.spritesheet('hero', 'https://cdn.glitch.com/59aa1c5f-c16d-41a1-bfd2-09072e84a538%2Fhero.png?1551136698770', {
@@ -16,6 +17,7 @@ class Home extends Phaser.Scene {
 	create() {
 		const map = this.make.tilemap({ key: 'level', tileWidth: 32, tileHeight: 32});
 		const tileset = map.addTilesetImage("map", 'tiles');
+		const townTiles = map.addTilesetImage("map", 'tilesTown');
 		const groundLayer = map.createLayer('ground', tileset, 0, 0);
 		const wallLayer = map.createLayer('walls', tileset, 0, 0);
 		const roofLayer = map.createLayer('roof', tileset, 0, 0);
