@@ -393,11 +393,33 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"..\/Tilemaps\/template 2.tsx"
-        }, 
+         "image":"..\/Tilemaps\/template 2.tsx",
+		 "imageheight":896,
+         "imagewidth":896,
+         "margin":0,
+         "name":"map",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":32,
+         "tilewidth":32
+        },
         {
          "firstgid":785,
-         "source":"..\/..\/..\/..\/..\/..\/Downloads\/town_2.tsx"
+         "image":"..\/..\/..\/..\/..\/..\/Downloads\/town_2.tsx",
+		 "imageheight":896,
+         "imagewidth":896,
+         "margin":0,
+         "name":"town",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":32,
+         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
