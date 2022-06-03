@@ -8,6 +8,9 @@ var config = {
         width: 1120,
         height: 640
     },
+	physics: {
+    default: 'arcade'
+	},
 	scene: [Home]
 };
 
