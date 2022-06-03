@@ -1,1 +1,1 @@
-# Three-Muses
+# Three Muses project
