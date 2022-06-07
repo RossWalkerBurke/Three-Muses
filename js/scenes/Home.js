@@ -1,8 +1,14 @@
 class Home extends Phaser.Scene {
 	constructor() {
-		super({key:"Home"});
+		super({
+			key:"Home",
+			pack: {
+				files: [
+					{ type: 'scenePlugin', key: 'SpinePlugin', url: 'plugins/SpinePluginDebug.js', sceneKey: 'spine' }
+				]
+			}
+		});
 	}
-	
 	preload(){
 		this.load.image('tiles', 'Production/tiled/map_1_assets.png');
 		this.load.image('tilesTown', 'Production/tiled/town_map_1.png');
@@ -12,6 +18,10 @@ class Home extends Phaser.Scene {
         frameWidth: 32,
         frameHeight: 32,
       });
+	  
+	    /*this.load.spine('truffles', 
+		'assets/Art/characters/Truffles/truffles_idle.json', 
+		'assets/Art/characters/Truffles/truffles.atlas', true);*/
 	}
 	
 	create() {
@@ -36,6 +46,7 @@ class Home extends Phaser.Scene {
 		this.hero = this.physics.add.sprite(200, 150, 'hero', 0);
 		this.hero.setScale(2);
 		this.hero.direction = 'down';
+		//var spineBoy = this.add.spine(400, 550, 'truffles', 'idle', true);
 		  
 		// The state machine managing the hero
 		this.stateMachine = new StateMachine('idle', {
