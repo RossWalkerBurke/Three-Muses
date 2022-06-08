@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="34" nextobjectid="77">
  <editorsettings>
-  <export target="map_1.tmj" format="json"/>
+  <export target="map_1,json.tmj" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="level1_tileset.tsx"/>
  <tileset firstgid="3589" source="hud.tsx"/>
@@ -80,7 +80,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
   </layer>
-  <group id="27" name="collide">
+  <group id="27" name="buildings">
    <group id="26" name="houses">
     <layer id="20" name="house 2" width="35" height="20">
      <data encoding="csv">
@@ -426,7 +426,7 @@
   </group>
  </group>
  <group id="31" name="objects">
-  <objectgroup id="29" name="colide">
+  <objectgroup id="29" name="collide">
    <object id="15" x="48.3254" y="128.119" width="25.8485" height="8.99078">
     <ellipse/>
    </object>
